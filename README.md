@@ -2,7 +2,7 @@
 
 A modern, responsive application for generating random groups from a list of students. Perfect for classroom activities, team assignments, or any scenario where you need to create balanced groups quickly.
 
-![Groupify Demo](demo.png)
+![Groupify Demo](demo.gif)
 
 ## Features
 
