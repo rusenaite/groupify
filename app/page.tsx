@@ -4,6 +4,14 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Shuffle, Plus, Minus, ChevronDown, ChevronUp } from "lucide-react"
 
+export function generateGroupName(): string {
+  const adjectives = ["Dynamic", "Creative", "Brilliant", "Energetic", "Innovative", "Visionary", "Courageous", "Fearless", "Bombastic", "Epic", "Legendary", "Mighty", "Fierce", "Savage", "Radical", "Awesome"];
+  const nouns = ["Team", "Squad", "Group", "Crew", "Alliance", "Gang", "Pack", "Tribe", "Clan"];
+  const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+  const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
+  return `${randomAdjective} ${randomNoun}`;
+}
+
 // Initial student list
 const initialStudents = ["RČ", "AČ", "DK", "RL", "TL", "KL", "KN", "VO", "TP", "DR", "MR"]
 
@@ -279,7 +287,7 @@ export default function GroupGenerator() {
                         >
                           <div className="bg-zinc-800/80 rounded-2xl border border-zinc-700 overflow-hidden">
                             <div className="px-3 py-2 bg-zinc-800 border-b border-zinc-700">
-                              <h3 className="text-xs font-medium">Group {groupIndex + 1}</h3>
+                              <h3 className="text-xs font-medium">Group {groupIndex + 1}: {generateGroupName()}</h3>
                             </div>
                             <div className="p-3">
                               <div className="grid gap-1.5">
