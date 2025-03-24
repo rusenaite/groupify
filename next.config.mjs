@@ -21,6 +21,9 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  basePath: process.env.NODE_ENV === 'production' ? '/groupify' : '',
+  output: 'export',
+  distDir: 'out',
 }
 
 mergeConfig(nextConfig, userConfig)
