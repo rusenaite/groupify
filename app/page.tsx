@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Shuffle, Plus, Minus, ChevronDown, ChevronUp } from "lucide-react"
 
@@ -33,6 +33,14 @@ export default function GroupGenerator() {
 
   // State for settings expanded
   const [settingsExpanded, setSettingsExpanded] = useState(false)
+
+  // State to handle window availability for SSR
+  const [isBrowser, setIsBrowser] = useState(false)
+  
+  // Effect to safely handle window access after component mounts
+  useEffect(() => {
+    setIsBrowser(true)
+  }, [])
 
   // Toggle student presence
   const toggleStudentPresence = (index: number) => {
@@ -144,7 +152,7 @@ export default function GroupGenerator() {
                 </div>
 
                 <AnimatePresence initial={false}>
-                  {(settingsExpanded || window.innerWidth >= 768) && (
+                  {(settingsExpanded || (isBrowser && window.innerWidth >= 768)) && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
