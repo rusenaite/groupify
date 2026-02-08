@@ -13,7 +13,7 @@ export function generateGroupName(): string {
 }
 
 // Initial student list
-const initialStudents = ["RČ", "AČ", "DK", "RL", "TL", "KL", "KN", "VO", "TP", "DR", "MR"]
+const initialStudents = ["AB", "MČ", "DČ", "MC", "SG", "VH", "SK", "ŠL", "NeM", "RM", "NkM", "AM", "EP", "DŠ", "GW"]
 
 export default function GroupGenerator() {
   // State for students and their attendance
